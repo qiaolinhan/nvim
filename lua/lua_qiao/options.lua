@@ -23,9 +23,6 @@ vim.cmd "set textwidth=75"
 vim.cmd "set colorcolumn=-2"
 
 
-
-
-
-
-
+-- to bashlike complete
+vim.cmd "set wildmode=longest,list,full"
 

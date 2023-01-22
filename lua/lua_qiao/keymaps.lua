@@ -22,6 +22,8 @@ vim.g.maploacalleadeer = " "
 --   f for file
 
 -- Normal --
+-- keymap("n", "r", "<C-l-l>", opts)
+
 -- Markdown-preview
 keymap("n", "r", "<Plug>MarkdownPreview", opts)
 
@@ -37,7 +39,7 @@ keymap("n", "<Down>", ":resize -2<CR>", opts)
 keymap("n", "<Left>", ":vertical resize +2<CR>", opts)
 keymap("n", "<Right>", ":vertical resize -2<CR>", opts)
 
-keymap("n", "<leader>e", ":Lexplore 20<CR>", opts)
+keymap("n", "<leader>t", ":Lexplore 20<CR>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)

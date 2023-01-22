@@ -47,13 +47,14 @@ packer.init {
 
 -- Install the plugins
 return packer.startup(function(use)
+  ----------------------------------------------------------------------
   -- plugins
   use "wbthomason/packer.nvim" --Have packer manage itself
   use "nvim-lua/popup.nvim" --An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used losts of plugins
 
   -- markdown-preview
-  -- for my macbook, it need 'brew install node; brew install yarn'
+  -- for MacOS, it need 'brew install node; brew install yarn'
   use ({
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
@@ -62,6 +63,9 @@ return packer.startup(function(use)
 
   -- dracula
   use {'dracula/vim', as = 'dracula'}
+
+  -- catppuccin
+  -- use {"catppuccin/nvim", as = 'catppuccin', config = get_config('catppuccin')}
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -75,6 +79,13 @@ return packer.startup(function(use)
 
   -- latex plugins
   use { 'lervag/vimtex', config = get_config('vimtex')}
+  -- conquer of completion for using vimtex
+  -- use {'neoclide/coc.nvim', branch = 'release'}
+
+  -- python-lsp
+  -- helps with using the lsp feature or python development
+  -- use 'neovim/nvim-lspconfig'
+  -- use {'HallerPatrick/py_lsp.nvim'}
 
 
 
