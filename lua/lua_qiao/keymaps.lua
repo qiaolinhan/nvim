@@ -1,9 +1,20 @@
+
+-- Commonly, the keymap with lua for neovim could be the format as shown in
+-- the followings
+-- vim.keymap.set({mode}, {lhs}, {rhs}, {options})
+-- vim.api.nvim_set_keymap({mode}, {lhs}, {rhs}, {options})
+
+-- Some information about `noremap`, `nnoremap`, ...
+-- https://stackoverflow.com/questions/3776117/what-is-the-difference-between-the-remap-noremap-nnoremap-and-vnoremap-mapping
+
+
 local opts = { noremap = ture, silent = ture }
+
 local term_opts = { silent = ture }
 
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
-
+-- vim.g is for `global`
 -- Remap space as leader key
 keymap("", "<space>", "<Nop>", opts)
 vim.g.mapleader = " "
@@ -21,8 +32,11 @@ vim.g.maploacalleadeer = " "
 --   b for buffer
 --   f for file
 
+---------------------------------------
 -- Normal --
--- keymap("n", "r", "<C-l-l>", opts)
+keymap("n", "<leader>t", ":Lexplore 20<CR>", opts)
+
+keymap("n", "<leader>w", ":w<CR>", {noremap = true})
 
 -- Markdown-preview
 keymap("n", "r", "<Plug>MarkdownPreview", opts)
@@ -39,16 +53,30 @@ keymap("n", "<Down>", ":resize -2<CR>", opts)
 keymap("n", "<Left>", ":vertical resize +2<CR>", opts)
 keymap("n", "<Right>", ":vertical resize -2<CR>", opts)
 
-keymap("n", "<leader>t", ":Lexplore 20<CR>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-k>", ":bprevious<CR>", opts)
 
+-- code runner keymaps
+vim.keymap.set('n', '<leader>r', ':RunCode<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', '<leader>rf', ':RunFile<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', '<leader>rft', ':RunFile tab<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', '<leader>rp', ':RunProject<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', '<leader>rc', ':RunClose<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', '<leader>crf', ':CRFiletype<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', '<leader>crp', ':CRProjects<CR>', { noremap = true, silent = false })
+
+---------------------------------------
 -- Insert
 -- Pres jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
 
+-- Relatively smart tab
+-- keymap('i', '<TAB>', 'pumvisible() ? "\<C-n>" : "\<TAB>"', {expr = true})
+-- keymap('i', '<S-TAB>', 'pumvisible() ? "\<C-p>" : "\<C-h>"', {expr = true})
+
+--------------------------------------
 -- Visual
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
@@ -57,3 +85,5 @@ keymap("v", ">", ">gv", opts)
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-j>", ":m .-2<CR>==", opts)
 keymap("v", "p", '"_dP', opts)
+
+

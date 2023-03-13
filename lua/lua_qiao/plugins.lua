@@ -48,7 +48,6 @@ packer.init {
 -- Install the plugins
 return packer.startup(function(use)
   ----------------------------------------------------------------------
-  -- plugins
   use "wbthomason/packer.nvim" --Have packer manage itself
   use "nvim-lua/popup.nvim" --An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used losts of plugins
@@ -59,13 +58,9 @@ return packer.startup(function(use)
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
   })
-  -- use {"iamcco/markdown-preview.nvim", run = 'cd app && npm install', cmd = "MarkdownPreview"}
 
   -- dracula
   use {'dracula/vim', as = 'dracula'}
-
-  -- catppuccin
-  -- use {"catppuccin/nvim", as = 'catppuccin', config = get_config('catppuccin')}
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -86,18 +81,14 @@ return packer.startup(function(use)
   -- helps with using the lsp feature or python development
   -- use 'neovim/nvim-lspconfig'
   -- use {'HallerPatrick/py_lsp.nvim'}
+  --
+  -- code runner
+  use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim', config = get_config('coderunner') }
 
 
 
 
-
-
-
-
-
-
-
-
+  -- -------------------------------------------------------------------
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

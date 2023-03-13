@@ -1,6 +1,0 @@
--- for using the py-lsp.nvim plug
-require'lspconfig'.pyright.setup{}
-require'py_lsp'.setup {
--- This is optional, but allows to create virtual envs from nvim
-host_python = "/anaconda3/envs/dev/python/bin"
-}
