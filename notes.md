@@ -25,4 +25,10 @@ configureation.
 * To install `latexmk` on MacOS: `sudo tlmgr install latexmk`
 * The different latex relies could be found at [TeX Live
   unity](https://amaxwell.github.io/tlutility/)
+* `dbus` is needed to work properly:  
+    * Install: `brew install dbus`
+    * Add `export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"` to `.zshrc` or `.bashrc`  
+    * Changed the value of `<auth><\auth>` in
+      `/usr/local/opt/dbus/share/dbus-1/session.conf` from `EXTERNAL` into
+      `DBUS_COOKIE_SHA1`
 

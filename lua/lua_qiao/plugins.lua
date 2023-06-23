@@ -59,8 +59,11 @@ return packer.startup(function(use)
     run = function() vim.fn["mkdp#util#install"]() end,
   })
 
+  -- themes/schemes
   -- dracula
   use {'dracula/vim', as = 'dracula'}
+  use {"olimorris/onedarkpro.nvim", as = 'onedark'} 
+  use{'joshdick/onedark.vim'}
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -73,7 +76,7 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- latex plugins
-  use { 'lervag/vimtex', config = get_config('vimtex')}
+  use { 'lervag/vimtex', config = get_config('vimtexconfig')}
   -- conquer of completion for using vimtex
   -- use {'neoclide/coc.nvim', branch = 'release'}
 
@@ -83,7 +86,7 @@ return packer.startup(function(use)
   -- use {'HallerPatrick/py_lsp.nvim'}
   --
   -- code runner
-  use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim', config = get_config('coderunner') }
+  use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim', config = get_config('coderunnerconfig') }
 
 
 

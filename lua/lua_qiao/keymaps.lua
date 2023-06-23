@@ -34,6 +34,13 @@ vim.g.maploacalleadeer = " "
 
 ---------------------------------------
 -- Normal --
+-- To manage the plugins with packer
+keymap('n', '<leader>pi', ':PackerInstall<CR>', {noremap = true})
+keymap('n', '<leader>pu', ':PackerUpdate<CR>', {noremap = true})
+keymap('n', '<leader>ps', ':PackerStatus<CR>', {noremap = true})
+keymap('n', '<leader>psy', ':PackerSync<CR>', {noremap = true})
+keymap('n', '<leader>pc', ':PackerClean<CR>', {noremap = true})
+
 keymap("n", "<leader>t", ":Lexplore 20<CR>", opts)
 
 keymap("n", "<leader>w", ":w<CR>", {noremap = true})
