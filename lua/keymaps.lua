@@ -34,19 +34,11 @@ vim.g.maploacalleadeer = " "
 
 ---------------------------------------
 -- Normal --
--- To manage the plugins with packer
-keymap('n', '<leader>pi', ':PackerInstall<CR>', {noremap = true})
-keymap('n', '<leader>pu', ':PackerUpdate<CR>', {noremap = true})
-keymap('n', '<leader>ps', ':PackerStatus<CR>', {noremap = true})
-keymap('n', '<leader>psy', ':PackerSync<CR>', {noremap = true})
-keymap('n', '<leader>pc', ':PackerClean<CR>', {noremap = true})
-
-keymap("n", "<leader>t", ":Lexplore 20<CR>", opts)
-
-keymap("n", "<leader>w", ":w<CR>", {noremap = true})
 
 -- Markdown-preview
 keymap("n", "r", "<Plug>MarkdownPreview", opts)
+keymap("n", "rs", "<Plug>MarkdownPreviewStop", opts)
+keymap("n", "rc", "<Plug>MarkdownPreviewToggle", opts)
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -78,6 +70,7 @@ vim.keymap.set('n', '<leader>crp', ':CRProjects<CR>', { noremap = true, silent =
 -- Insert
 -- Pres jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
+keymap("i", "jj", "<ESC>", opts)
 
 -- Relatively smart tab
 -- keymap('i', '<TAB>', 'pumvisible() ? "\<C-n>" : "\<TAB>"', {expr = true})

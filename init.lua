@@ -1,6 +1,4 @@
 require "options"
 require "keymaps"
-require "plugins"
+require "lazy_plug"
 require "colorscheme"
-require "cmp"
-
