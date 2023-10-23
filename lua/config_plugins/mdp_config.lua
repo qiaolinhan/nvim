@@ -1,6 +1,6 @@
 -- set to 1, nvim will open the preview window after entering the Markdown buffer
 -- default: 0
-vim.g.mkdp_auto_start = 0
+vim.g.mkdp_auto_start=0
 
 -- set to 1, the nvim will auto close current preview window when changing
 -- from Markdown buffer to another buffer
@@ -11,7 +11,7 @@ vim.g.mkdp_auto_close = 1
 -- when leaving insert mode. Default 0 is auto-refresh Markdown as you edit or
 -- move the cursor
 -- default: 0
-vim.g.mkdp_refresh_slow = 0
+vim.g.mkdp_refresh_slow = 1
 
 -- set to 1, the MarkdownPreview command can be used for all files,
 -- by default it can be use in Markdown files only

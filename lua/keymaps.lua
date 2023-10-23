@@ -35,10 +35,12 @@ vim.g.maploacalleadeer = " "
 ---------------------------------------
 -- Normal --
 
+-- Vimtex-preview
+-- \ll
 -- Markdown-preview
-keymap("n", "r", "<Plug>MarkdownPreview", opts)
-keymap("n", "rs", "<Plug>MarkdownPreviewStop", opts)
-keymap("n", "rc", "<Plug>MarkdownPreviewToggle", opts)
+keymap("n", "r", ":MarkdownPreview<CR>", opts)
+-- keymap("n", "rs", "<Plug>MarkdownPreviewStop", opts)
+-- keymap("n", "rc", "<Plug>MarkdownPreviewToggle", opts)
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
