@@ -1,6 +1,14 @@
 return {
   ----------------------------------------------------------------------
-  --
+  -- telescope ------------------------------
+  {'nvim-telescope/telescope.nvim',
+    tag = '0.1.4',
+    dependencies = {'nvim-lua/plenary.nvim'},
+    config = function()
+    require('config_plugins/telescope_config')
+    end,
+  },
+
   -- auto save ------------------------------
   {'pocco81/auto-save.nvim',
     config = function()
