@@ -37,10 +37,6 @@ vim.g.maploacalleadeer = " "
 
 -- Vimtex-preview
 -- \ll
--- Markdown-preview
-keymap("n", "r", ":MarkdownPreview<CR>", opts)
--- keymap("n", "rs", "<Plug>MarkdownPreviewStop", opts)
--- keymap("n", "rc", "<Plug>MarkdownPreviewToggle", opts)
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -60,14 +56,19 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-k>", ":bprevious<CR>", opts)
 
 -- code runner keymaps
-vim.keymap.set('n', '<leader>r', ':RunCode<CR>', { noremap = true, silent = false })
-vim.keymap.set('n', '<leader>rf', ':RunFile<CR>', { noremap = true, silent = false })
-vim.keymap.set('n', '<leader>rft', ':RunFile tab<CR>', { noremap = true, silent = false })
-vim.keymap.set('n', '<leader>rp', ':RunProject<CR>', { noremap = true, silent = false })
-vim.keymap.set('n', '<leader>rc', ':RunClose<CR>', { noremap = true, silent = false })
-vim.keymap.set('n', '<leader>crf', ':CRFiletype<CR>', { noremap = true, silent = false })
-vim.keymap.set('n', '<leader>crp', ':CRProjects<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', 'r', ':RunCode<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', 'rf', ':RunFile<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', 'rft', ':RunFile tab<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', 'rp', ':RunProject<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', 'rc', ':RunClose<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', 'crf', ':CRFiletype<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', 'crp', ':CRProjects<CR>', { noremap = true, silent = false })
 
+-- markdown-preview
+vim.keymap.set('n', 'r', ':MarkdownPreview', {})
+-- :MarkdownPreview
+-- :MarkdownPreviewStop
+-- :MarkdownPreviewToggle
 ---------------------------------------
 -- Insert
 -- Pres jk fast to enter

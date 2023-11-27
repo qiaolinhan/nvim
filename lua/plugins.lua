@@ -1,5 +1,12 @@
 return {
   ----------------------------------------------------------------------
+  -- nvim-comment
+  {'terrortylor/nvim-comment',
+    config = function()
+    require('config_plugins/comment_config')
+    end,
+  },
+
   -- telescope ------------------------------
   {'nvim-telescope/telescope.nvim',
     tag = '0.1.4',

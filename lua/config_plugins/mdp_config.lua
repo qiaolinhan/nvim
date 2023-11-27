@@ -1,3 +1,10 @@
+
+
+-- Markdown-preview
+-- vim.keymap("n", "r", "<Plug>MarkdownPrewiew", opts)
+-- vim.keymap("n", "rs", "<Plug>MarkdownPreviewStop", opts)
+-- vim.keymap("n", "rc", "<Plug>MarkdownPreviewToggle", opts)
+
 -- set to 1, nvim will open the preview window after entering the Markdown buffer
 -- default: 0
 vim.g.mkdp_auto_start=0
@@ -5,7 +12,7 @@ vim.g.mkdp_auto_start=0
 -- set to 1, the nvim will auto close current preview window when changing
 -- from Markdown buffer to another buffer
 -- default: 1
-vim.g.mkdp_auto_close = 1
+vim.g.mkdp_auto_close = 0
 
 -- set to 1, Vim will refresh Markdown when saving the buffer or
 -- when leaving insert mode. Default 0 is auto-refresh Markdown as you edit or
