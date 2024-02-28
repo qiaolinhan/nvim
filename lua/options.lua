@@ -26,3 +26,4 @@ vim.cmd "set wildmode=longest,list,full"
 
 -- python
 vim.g.python3_host_prog="/home/qiao/anaconda3/envs/dev/bin/python3"
+

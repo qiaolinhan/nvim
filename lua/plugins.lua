@@ -1,9 +1,17 @@
 return {
   ----------------------------------------------------------------------
+  -- nvim header
+  {'alpertuna/vim-header',
+    config = function()
+	require('config_plugins/header_config')
+    end,
+  },
+  --
+  --
   -- nvim-comment
   {'terrortylor/nvim-comment',
     config = function()
-    require('config_plugins/comment_config')
+	require('config_plugins/comment_config')
     end,
   },
 
