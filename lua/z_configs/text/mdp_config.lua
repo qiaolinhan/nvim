@@ -1,9 +1,16 @@
 
 
 -- Markdown-preview
--- vim.keymap("n", "r", "<Plug>MarkdownPrewiew", opts)
--- vim.keymap("n", "rs", "<Plug>MarkdownPreviewStop", opts)
--- vim.keymap("n", "rc", "<Plug>MarkdownPreviewToggle", opts)
+local function keymap(mode, lhs, rhs, opts)
+  local options = { noremap=true, silent=true }
+  if opts then
+    options = vim.tbl_extend('force', options, opts)
+  end
+  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+end
+keymap("n", "r", "<Plug>MarkdownPrewiew", opts)
+keymap("n", "rs", "<Plug>MarkdownPreviewStop", opts)
+keymap("n", "rc", "<Plug>MarkdownPreviewToggle", opts)
 
 -- set to 1, nvim will open the preview window after entering the Markdown buffer
 -- default: 0

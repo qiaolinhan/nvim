@@ -3,7 +3,7 @@ return {
   -- nvim header
   {'alpertuna/vim-header',
     config = function()
-	require('config_plugins/header_config')
+	require('z_configs/functions/header_config')
     end,
   },
   --
@@ -11,7 +11,7 @@ return {
   -- nvim-comment
   {'terrortylor/nvim-comment',
     config = function()
-	require('config_plugins/comment_config')
+	require('z_configs/functions/comment_config')
     end,
   },
 
@@ -20,14 +20,14 @@ return {
     tag = '0.1.4',
     dependencies = {'nvim-lua/plenary.nvim'},
     config = function()
-    require('config_plugins/telescope_config')
+    require('z_configs/functions/telescope_config')
     end,
   },
 
   -- auto save ------------------------------
   {'pocco81/auto-save.nvim',
     config = function()
-    require('config_plugins/autosave_config')
+    require('z_configs/functions/autosave_config')
     end,
   },
   -- original -------------------------------
@@ -42,47 +42,74 @@ return {
 	vim.fn["mkdp#util#install"]() 
     end,
     config = function()
-	require('config_plugins/mdp_config')
+	require('z_configs/text/mdp_config')
     end,
   },
 
   -- latex plugins --------------------------
   { 'lervag/vimtex', 
     config = function()
-	require('config_plugins/vimtex_config')
+	require('z_configs/text/vimtex_config')
     end,
   },
    
   -- color schemes --------------------------
   {'Mofiqul/dracula.nvim',
     config = function()
-	require('config_plugins/dracula_config')
+	require('z_configs/dracula_config')
     end,
+  },
+  -- Configure LazyVim to load dracula
+  {'LazyVim/LazyVim',
+    opts = {
+    colorscheme = "dracula",
+    },
   },
 
   -- lualine
   {'nvim-lualine/lualine.nvim',
     dependencies = {'nvim-tree/nvim-web-devicons',},
     config = function()
-	require('config_plugins/lualine_config')
+	require('z_configs/functions/lualine_config')
     end,
   },
-  -- cmp plugins
-  --  {"hrsh7th/nvim-cmp", opts='config/cmp_path_config'}, -- The completion plugin
-  -- "hrsh7th/cmp-buffer", -- Buffer completions
-  -- "hrsh7th/cmp-path", -- Path completions
-  -- "hrsh7th/cmp-cmdline", -- Cmdline completions
-  -- "saadparwaiz1/cmp_luasnip", -- Snippet completions
 
-  -- "L3MON4D3/LuaSnip", -- snippet engine
-  -- "rafamadriz/friendly-snippets", -- a bunch of snippets to use
 
-  -- lsp related ----------------------------
+  -- language server protocol (lsp) related ----------------------------
   {'williamboman/mason.nvim',
+   'williamboman/mason-lspconfig.nvim',
+   'neovim/nvim-lspconfig',
     config = function()
-	require('config_plugins/mason_config')
+	require('z_configs/mason/mason_config')
     end,
   },
+
+  -- rust-tools
+  {'simrat39/rust-tools.nvim',
+   'nvim-lua/plenary.nvim',
+   'mfussenegger/nvim-dap',
+   config = function()
+       require('z_config/mason/rust_config')
+       end,
+  },
+
+	--   -- cmp plugins
+	--   "hrsh7th/nvim-cmp", 
+	--   -- The completion plugin
+	--   "hrsh7th/cmp-buffer", -- Buffer completions
+	--   -- path completion
+	--   {"hrsh7th/cmp-path",
+	--      config = function()
+	-- require('z_configs/mason/cmp_path_config')
+	--     end,
+	--   },
+	--
+	--   "hrsh7th/cmp-cmdline", -- Cmdline completions
+	--   "saadparwaiz1/cmp_luasnip", -- Snippet completions
+	--
+	--   "L3MON4D3/LuaSnip", -- snippet engine
+	--   "rafamadriz/friendly-snippets", -- a bunch of snippets to use
+
   -- to use pyright, npm is needed
   {'neoclide/npm.nvim'},
   -- conquer of completion for using vimtex

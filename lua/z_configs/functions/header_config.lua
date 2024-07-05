@@ -1,8 +1,14 @@
-
--- map <F4> :AddHeader<CR>
+--[[--
+File: header_config.lua
+Author: Linhan Qiao <qiaolinhan073@gmail.com>
+Date: 2024-03-27
+Last Modified By: Linhan Qiao <qiaolinhan073@gmail.com>
+-----
+MIT license
+--]]--
 
 vim.g.header_auto_add_header = 1 --default 0
-vim.g.header_auto_update_header = 1 --default 0
+-- vim.g.header_auto_update_header = 1 --default 0
 vim.g.header_alignment = 0 --default 1
 vim.g.header_max_size = 20
 
@@ -18,4 +24,6 @@ vim.g.header_field_author = 'Linhan Qiao'
 vim.g.header_field_author_email = 'qiaolinhan073@gmail.com'
 vim.g.header_field_copyright = 'MIT license' --default ''
 vim.g.header_field_lisence_id = 'BSD-3-Clause' --default ''
+
+-- map <F4> :AddHeader<CR>
 

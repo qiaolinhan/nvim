@@ -17,7 +17,7 @@ vim.opt.guifont = "monospace:h17"
 termguicolors = true
 
 vim.cmd "set iskeyword+=-"
-vim.cmd "set textwidth=57"
+vim.cmd "set textwidth=85"
 vim.cmd "set colorcolumn=-2"
 
 
