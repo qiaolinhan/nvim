@@ -59,12 +59,12 @@ return {
 	require('z_configs/dracula_config')
     end,
   },
-  -- Configure LazyVim to load dracula
-  {'LazyVim/LazyVim',
-    opts = {
-    colorscheme = "dracula",
-    },
-  },
+  -- -- Configure LazyVim to load dracula
+  -- {'LazyVim/LazyVim',
+  --   opts = {
+  --   colorscheme = "dracula",
+  --   },
+  -- },
 
   -- lualine
   {'nvim-lualine/lualine.nvim',
