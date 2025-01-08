@@ -38,9 +38,10 @@ require("mason-lspconfig").setup {
 -- end
 --
 --
--- mason.setup({})
+mason.setup({})
 --
 -- -- mason.lua
+mason_lspconfig.setup({})
 -- mason_lspconfig.setup({
 --  automatic_installation = true,
 --  ensure_installed = { "lua_ls", "rust_analyzer" },
