@@ -65,7 +65,7 @@ vim.keymap.set('n', 'crf', ':CRFiletype<CR>', { noremap = true, silent = false }
 vim.keymap.set('n', 'crp', ':CRProjects<CR>', { noremap = true, silent = false })
 
 -- markdown-preview
-vim.keymap.set('n', 'r', ':MarkdownPreview', {})
+vim.keymap.set('n', '<F8>', ':MarkdownPreview<CR>', {})
 -- :MarkdownPreview
 -- :MarkdownPreviewStop
 -- :MarkdownPreviewToggle

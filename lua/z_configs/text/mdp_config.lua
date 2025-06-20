@@ -8,13 +8,13 @@ local function keymap(mode, lhs, rhs, opts)
   end
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
-keymap("n", "r", "<Plug>MarkdownPrewiew", opts)
-keymap("n", "rs", "<Plug>MarkdownPreviewStop", opts)
-keymap("n", "rc", "<Plug>MarkdownPreviewToggle", opts)
+-- keymap("n", "<F8>", "<Plug>MarkdownPrewiew", opts)
+-- keymap("n", "rs", "<Plug>MarkdownPreviewStop", opts)
+-- keymap("n", "rc", "<Plug>MarkdownPreviewToggle", opts)
 
 -- set to 1, nvim will open the preview window after entering the Markdown buffer
 -- default: 0
-vim.g.mkdp_auto_start=0
+vim.g.mkdp_auto_start=1
 
 -- set to 1, the nvim will auto close current preview window when changing
 -- from Markdown buffer to another buffer
@@ -48,7 +48,9 @@ vim.g.mkdp_open_ip = ''
 -- valid: `/path/with\ space/xxx`
 -- invalid: `/path/with\\ space/xxx`
 -- default: ''
-vim.g.mkdp_browser = ''
+vim.g.mkdp_browser = '/usr/bin/firefox'
+-- Fot t430, it use firefox, for mac it should use safari, so the browser might be
+-- empty here
 
 -- set to 1, echo preview page URL in command line when opening preview page
 -- default is 0
@@ -76,7 +78,7 @@ vim.g.mkdp_port = ''
 vim.g.mkdp_page_title = '「${name}」'
 
 -- use a custom location for images
-vim.g.mkdp_images_path = "/home/user/.markdown_images"
+vim.g.mkdp_images_path = "/home/usr/.markdown_images"
 
 -- set default theme (dark or light)
 -- By default the theme is defined according to the preferences of the system
