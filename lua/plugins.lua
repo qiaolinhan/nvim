@@ -76,9 +76,9 @@ return {
 
 
   -- language server protocol (lsp) related ----------------------------
-  {'williamboman/mason.nvim',
-   'williamboman/mason-lspconfig.nvim',
-   'neovim/nvim-lspconfig',
+  {'mason-org/mason.nvim',
+   'mason-org/mason-lspconfig.nvim',
+   -- 'neovim/nvim-lspconfig',
     config = function()
 	require('z_configs/mason/mason_config')
     end,
